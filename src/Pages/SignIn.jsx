@@ -41,7 +41,14 @@ class SignIn extends Component {
     render() {
         const { email, pwd } = this.state
         return (
-            <div className="text-center">
+            <div className="text-center" style={{
+                height: '100vh',
+                padding: 0,
+                display: 'flex',
+                flexWrap: 'nowrap',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}>
                 <form className="form-signin" onSubmit={(event) => this.LoginFn(event)}>
                     <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
