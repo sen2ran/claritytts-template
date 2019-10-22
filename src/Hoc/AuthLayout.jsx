@@ -3,9 +3,8 @@ import React from 'react';
 
 import Header from '../Components/Common/Header';
 import Footer from '../Components/Common/Footer';
-// import AdminNav from '../Components/Admin/Nav/AdminNav'
 
-const AdminLayout = (props) => {
+const AuthLayout = (props) => {
     return (
         <div>
             <Header />
@@ -17,4 +16,4 @@ const AdminLayout = (props) => {
     );
 };
 
-export default AdminLayout;
+export default AuthLayout;
