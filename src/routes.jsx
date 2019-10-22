@@ -16,6 +16,7 @@ const Routes = (props) => {
     <Layout>
       <Switch>
         <Route {...props} path="/sign-in" exact component={SignIn} />
+        <Route {...props} path="/" exact component={SignIn} />
         <Route {...props} path="/home" exact component={Home} />
         <Route {...props} path="/enterprise" exact component={Enterprise} />
         <Route {...props} path="/features" exact component={Features} />

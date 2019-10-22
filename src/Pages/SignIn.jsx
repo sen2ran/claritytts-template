@@ -43,12 +43,12 @@ class SignIn extends Component {
         return (
             <div className="text-center">
                 <form className="form-signin" onSubmit={(event) => this.LoginFn(event)}>
-                    <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <h1 className="h3 mb-3 font-weight-normal">Sign In</h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
                     <input
                         className="form-control"
                         type="email"
-                        placeholder="Email address"
+                        placeholder="Email"
                         value={email}
                         onChange={(event) => this.updateInput({ event, field: 'email' })}
                     />
@@ -59,7 +59,7 @@ class SignIn extends Component {
                         placeholder="Password"
                         value={pwd}
                         onChange={(event) => this.updateInput({ event, field: 'pwd' })} />
-                    <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={(event) => this.LoginFn(event)}>Sign in</button>
+                    <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={(event) => this.LoginFn(event)}>Sign In</button>
                     <p className="mt-5 mb-3 text-muted">© 2019</p>
                 </form>
             </div>
