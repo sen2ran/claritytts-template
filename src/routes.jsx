@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from './Hoc/Layout.jsx'
 import { Switch, Route } from 'react-router-dom'
 
-import Home from './Pages/Home.jsx'
 import SignIn from './Pages/SignIn.jsx'
 
 import Enterprise from './Pages/Enterprise.jsx'
@@ -16,8 +15,8 @@ const Routes = (props) => {
     <Layout>
       <Switch>
         <Route {...props} path="/sign-in" exact component={SignIn} />
-        <Route {...props} path="/" exact component={SignIn} />
-        <Route {...props} path="/home" exact component={Home} />
+        <Route {...props} path="/" exact component={Features} />
+        <Route {...props} path="/home" exact component={Features} />
         <Route {...props} path="/enterprise" exact component={Enterprise} />
         <Route {...props} path="/features" exact component={Features} />
         <Route {...props} path="/pricing" exact component={Pricing} />
