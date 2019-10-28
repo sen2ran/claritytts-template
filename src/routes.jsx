@@ -4,23 +4,36 @@ import { Switch, Route } from 'react-router-dom'
 
 import SignIn from './Pages/SignIn.jsx'
 
-import Enterprise from './Pages/Enterprise.jsx'
-import Features from './Pages/Features.jsx'
-import Pricing from './Pages/Pricing.jsx'
-import Support from './Pages/Support.jsx'
+import Angular from './Pages/Angular.jsx'
+import ReactJs from './Pages/React.jsx'
+import Vue from './Pages/Vue.jsx'
+import Svelte from './Pages/Svelte'
 
 const Routes = (props) => {
   console.log(props);
   return (
     <Layout>
       <Switch>
-        <Route {...props} path="/sign-in" exact component={SignIn} />
-        <Route {...props} path="/" exact component={Features} />
-        <Route {...props} path="/home" exact component={Features} />
-        <Route {...props} path="/enterprise" exact component={Enterprise} />
-        <Route {...props} path="/features" exact component={Features} />
-        <Route {...props} path="/pricing" exact component={Pricing} />
-        <Route {...props} path="/support" exact component={Support} />
+        {/* en */}
+        <Route {...props} path="/" exact component={ReactJs} />
+        <Route {...props} path="/react" exact component={ReactJs} />
+        <Route {...props} path="/angular" exact component={Angular} />
+        <Route {...props} path="/vue" exact component={Vue} />
+        <Route {...props} path="/svelte" exact component={Svelte} />
+
+        {/* en */}
+        <Route {...props} path="/" exact component={ReactJs} />
+        <Route {...props} path="/en/react" exact component={ReactJs} />
+        <Route {...props} path="/en/angular" exact component={Angular} />
+        <Route {...props} path="/en/vue" exact component={Vue} />
+        <Route {...props} path="/en/svelte" exact component={Svelte} />
+
+        {/* ru */}
+        <Route {...props} path="/" exact component={ReactJs} />
+        <Route {...props} path="/ru/react" exact component={ReactJs} />
+        <Route {...props} path="/ru/angular" exact component={Angular} />
+        <Route {...props} path="/ru/vue" exact component={Vue} />
+        <Route {...props} path="/ru/svelte" exact component={Svelte} />
       </Switch>
     </Layout>
   )

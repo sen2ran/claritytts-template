@@ -9,7 +9,6 @@ const Footer = ({ name, imageUrl, description }) => {
                         src={imageUrl}
                         alt={name + " Image"}
                         style={{
-                            // width: "100%",
                             textAlign: 'center',
                             maxHeight: '250px'
                         }}
