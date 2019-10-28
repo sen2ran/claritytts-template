@@ -13,7 +13,7 @@ class Support extends Component {
     }
 
     async componentDidMount() {
-        const singleNav = await getDetails("pricing.json")
+        const singleNav = await getDetails("svelte.json")
         this.setState({
             name: singleNav.name,
             metaTag: singleNav.metaTag

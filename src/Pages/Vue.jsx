@@ -14,7 +14,7 @@ class Pricing extends Component {
     }
 
     async componentDidMount() {
-        const singleNav =await getDetails("support.json")
+        const singleNav =await getDetails("vue.json")
         this.setState({
             name: singleNav.name,
             metaTag: singleNav.metaTag

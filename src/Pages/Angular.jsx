@@ -13,7 +13,7 @@ class Enterprise extends Component {
     }
 
     async componentDidMount() {
-        const singleNav = await getDetails("enterprise.json")
+        const singleNav = await getDetails("angular.json")
         this.setState({
             name: singleNav.name,
             metaTag: singleNav.metaTag

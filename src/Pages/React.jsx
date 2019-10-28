@@ -13,7 +13,7 @@ class Feature extends Component {
     }
 
     async componentDidMount() {
-        const singleNav = await getDetails("features.json")
+        const singleNav = await getDetails("react.json")
         this.setState({
             name: singleNav.name,
             metaTag: singleNav.metaTag
