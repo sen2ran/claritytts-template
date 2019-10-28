@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios')
 const path = require('path');
 const fs = require('fs')
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
