@@ -1,6 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
-const Footer = ({ name, imageUrl, description }) => {
+const Content = ({ name, imageUrl, description, descriptionRu, header }) => {
     return (
         <div className="container">
             <div className="row" >
@@ -19,10 +20,18 @@ const Footer = ({ name, imageUrl, description }) => {
                     <h1 style={{ float: 'left' }}>{name}</h1>
                     <p style={{
                         color: "#6c757d"
-                    }}>{description}</p>
+                    }}>{header.country === 'en' ? description : descriptionRu}</p>
                 </div>
             </div>
         </div>
     );
 };
-export default Footer;
+
+
+function mapStateToProps(state) {
+    return {
+        header: state.headerData
+    }
+}
+
+export default connect(mapStateToProps, null)(Content);

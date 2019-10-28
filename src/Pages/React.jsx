@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthLaylout from '../Hoc/AuthLayout'
-import { getSingleNav } from "../services/fakeUserService";
+import { getDetails } from "../services/Apicalls";
+
 
 import Content from '../Components/Common/Content'
 import MetaTag from '../Components/Common/MetaTag'
@@ -8,11 +9,11 @@ import MetaTag from '../Components/Common/MetaTag'
 class Feature extends Component {
     state = {
         name: "",
-        metaTag:""
+        metaTag: ""
     }
 
-    componentDidMount() {
-        const singleNav = getSingleNav("features")
+    async componentDidMount() {
+        const singleNav = await getDetails("features.json")
         this.setState({
             name: singleNav.name,
             metaTag: singleNav.metaTag
@@ -24,24 +25,30 @@ class Feature extends Component {
             title,
             image,
             shortDescription,
-            description
+            description,
+            shortDescriptionRu,
+            descriptionRu
         } = this.state.metaTag
 
         const { name } = this.state
         return (
-            <AuthLaylout>
-              <MetaTag
-                    name={name}
-                    title={title}
-                    shortDescription={shortDescription}
-                    image={image}
-                />
-                <Content
-                    name={title}
-                    imageUrl={image}
-                    description={description}
-                />
-            </AuthLaylout>
+            name ?
+                <AuthLaylout>
+                    <MetaTag
+                        name={name}
+                        title={title}
+                        shortDescription={shortDescription}
+                        shortDescriptionRu={shortDescriptionRu}
+                        image={image}
+                    />
+                    <Content
+                        name={title}
+                        imageUrl={image}
+                        description={description}
+                        descriptionRu={descriptionRu}
+                    />
+                </AuthLaylout>
+                : <AuthLaylout></AuthLaylout>
         )
     }
 }
