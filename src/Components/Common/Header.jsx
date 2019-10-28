@@ -1,45 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { changeLangFn } from '../../store/actions/index'
+import { bindActionCreators } from 'redux'
 import { Link, withRouter } from 'react-router-dom'
 
 class Header extends Component {
-  state = {
-    country: 'en',
-    navDetails: [
-      {
-        name: "React",
-        linkTo: '/react'
-      },
-      {
-        name: 'Angular',
-        linkTo: '/angular'
-      },
-      {
-        name: "Vue js",
-        linkTo: '/vue'
-      },
-      {
-        name: 'Svelte',
-        linkTo: '/svelte'
-      }
-    ]
-  }
-
-  componentDidMount() {
-  }
-
+  
   countryChangeFn(e) {
-    this.setState({
-      country: e.target.value
-    })
+    const { changeLangFn, history, location } = this.props
+    changeLangFn(e.target.value)
+    history.push("/" + e.target.value + "/" + location.pathname.split('/')[2]);
   }
-
-  LogoutFn() {
-    localStorage.clear();
-    this.props.history.push('/sign-in')
-  }
-
   render() {
-    const { navDetails, country } = this.state
+    console.log(this.props);
+    const { navDetails, country } = this.props.header
     return (
       <div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 className="my-0 mr-md-auto font-weight-normal">Header</h5>
@@ -60,4 +34,14 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+function mapStateToProps(state) {
+  return {
+    header: state.headerData
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeLangFn }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header))
