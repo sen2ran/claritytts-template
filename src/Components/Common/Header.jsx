@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-
-import { getNavDetails } from "../../services/fakeUserService";
-
 import { Link, withRouter } from 'react-router-dom'
 
 class Header extends Component {
   state = {
-    country: 'ru',
+    country: 'en',
     navDetails: [
       {
         name: "React",
@@ -28,28 +25,12 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    // const navDetails = getNavDetails("0001")
-    // this.setState({
-    //   navDetails: navDetails.navs
-    // })
   }
 
   countryChangeFn(e) {
-    // console.log(e);
-    // alert(1)
     this.setState({
       country: e.target.value
     })
-
-    // setCountry(e.target.value)
-    // dispatch({
-    //   type: 'CHANGE_LANG',
-    //   lang: e.target.value
-    // })
-
-    // Router.push({
-    //   pathname: '/' + e.target.value + '/' + router.pathname.split('/')[2],
-    // })
   }
 
   LogoutFn() {
@@ -70,7 +51,7 @@ class Header extends Component {
         <nav className="my-2 my-md-0 mr-md-3">
           {
             navDetails.map(navDetail =>
-              <Link to={navDetail.linkTo} className="p-2 text-dark" key={navDetail.name} >{navDetail.name}</Link>
+              <Link to={`/${country}${navDetail.linkTo}`} className="p-2 text-dark" key={navDetail.name} >{navDetail.name}</Link>
             )
           }
         </nav>
