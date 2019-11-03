@@ -25,7 +25,7 @@ class Header extends Component {
         <nav className="my-2 my-md-0 mr-md-3">
           {
             navDetails.map(navDetail =>
-              <Link to={`/${country}${navDetail.linkTo}`} className="p-2 text-dark" key={navDetail.name} >{navDetail.name}</Link>
+              <Link to={navDetail.linkTo} className="p-2 text-dark" key={navDetail.name} >{navDetail.name}</Link>
             )
           }
         </nav>

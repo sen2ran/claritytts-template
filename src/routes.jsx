@@ -6,6 +6,9 @@ import Angular from './Pages/Angular.jsx'
 import ReactJs from './Pages/React.jsx'
 import Vue from './Pages/Vue.jsx'
 import Svelte from './Pages/Svelte'
+import Feature from './Pages/Feature';
+import All from './Pages/All';
+
 
 const Routes = (props) => {
   console.log(props);
@@ -15,18 +18,18 @@ const Routes = (props) => {
         {/* en */}
         <Route {...props} path="/" exact component={
           () => (
-            <Redirect to="/en/react" />
+            <Redirect to="/all" />
           )
         } />
-        <Route {...props} path="/en/react" exact component={ReactJs} />
-        <Route {...props} path="/en/angular" exact component={Angular} />
-        <Route {...props} path="/en/vue" exact component={Vue} />
-        <Route {...props} path="/en/svelte" exact component={Svelte} />
-        {/* ru */}
-        <Route {...props} path="/ru/react" exact component={ReactJs} />
-        <Route {...props} path="/ru/angular" exact component={Angular} />
-        <Route {...props} path="/ru/vue" exact component={Vue} />
-        <Route {...props} path="/ru/svelte" exact component={Svelte} />
+
+        <Route {...props} path="/all" exact component={All} />
+        <Route {...props} path="/feature" exact component={Feature} />
+
+        <Route {...props} path="/react" exact component={ReactJs} />
+        <Route {...props} path="/angular" exact component={Angular} />
+        <Route {...props} path="/vue" exact component={Vue} />
+        <Route {...props} path="/svelte" exact component={Svelte} />
+
       </Switch>
     </Layout>
   )

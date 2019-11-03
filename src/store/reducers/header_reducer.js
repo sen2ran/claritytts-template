@@ -1,21 +1,31 @@
 const iniState = {
     country: 'en',
-    navDetails: [{
-            name: "React",
-            linkTo: '/react'
+    navDetails: [
+        // {
+        //     name: "React",
+        //     linkTo: '/react'
+        // },
+        // {
+        //     name: 'Angular',
+        //     linkTo: '/angular'
+        // },
+        // {
+        //     name: "Vue js",
+        //     linkTo: '/vue'
+        // },
+        // {
+        //     name: 'Svelte',
+        //     linkTo: '/svelte'
+        // },
+        {
+            name: 'All',
+            linkTo: '/all'
         },
         {
-            name: 'Angular',
-            linkTo: '/angular'
+            name: 'Feature',
+            linkTo: '/feature'
         },
-        {
-            name: "Vue js",
-            linkTo: '/vue'
-        },
-        {
-            name: 'Svelte',
-            linkTo: '/svelte'
-        }
+        
     ]
 }
 

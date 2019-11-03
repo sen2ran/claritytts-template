@@ -13,7 +13,7 @@ import Routes from './routes';
 
 const App = (props) => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/en'>
             <Routes {...props} />
         </BrowserRouter>
     )
