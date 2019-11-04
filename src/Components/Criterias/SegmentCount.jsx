@@ -3,9 +3,8 @@ import CriteriaLayout from '../../Hoc/CriteriaLayout'
 class SegmentCount extends Component {
     render() {
         return (
-            <div className="col-6">
-                <h4>SegmentCount</h4>
-            </div>
+            <CriteriaLayout heading="SegmentCount">
+            </CriteriaLayout>
         );
     }
 }

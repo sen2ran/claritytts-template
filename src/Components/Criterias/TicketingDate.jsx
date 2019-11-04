@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import CriteriaLayout from "../../Hoc/CriteriaLayout";
 
 class TicketingDate extends Component {
-    render() {
-        return (
-            <div className="col-6">
-                <h4>TicketingDate</h4>
-            </div>
-        );
-    }
+  render() {
+    return <CriteriaLayout heading="TicketingDate"></CriteriaLayout>;
+  }
 }
 
 export default TicketingDate;

@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import CriteriaLayout from '../../Hoc/CriteriaLayout'
-
+import React, { Component } from "react";
+import CriteriaLayout from "../../Hoc/CriteriaLayout";
 
 class FareBasisCode extends Component {
-    render() {
-        return (
-            <div className="col-6">
-                <h4>FareBasisCode</h4>
-            </div>
-        );
-    }
+  render() {
+    return <CriteriaLayout heading="FareBasisCode"></CriteriaLayout>;
+  }
 }
 
 export default FareBasisCode;

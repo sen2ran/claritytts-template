@@ -3,9 +3,8 @@ import CriteriaLayout from '../../Hoc/CriteriaLayout'
 class Origin extends Component {
     render() {
         return (
-            <div className="col-6">
-                <h4>Origin</h4>
-            </div>
+            <CriteriaLayout heading="Origin">
+            </CriteriaLayout>
         );
     }
 }

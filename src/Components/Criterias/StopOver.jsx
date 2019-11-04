@@ -3,9 +3,8 @@ import CriteriaLayout from '../../Hoc/CriteriaLayout'
 class StopOver extends Component {
     render() {
         return (
-            <div className="col-6">
-                <h4>StopOver</h4>
-            </div>
+            <CriteriaLayout heading="StopOver">
+            </CriteriaLayout>
         );
     }
 }

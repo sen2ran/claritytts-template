@@ -4,9 +4,8 @@ import CriteriaLayout from '../../Hoc/CriteriaLayout'
 class OperatingAirline extends Component {
     render() {
         return (
-            <div className="col-6">
-                <h4>OperatingAirline</h4>
-            </div>
+            <CriteriaLayout heading="OperatingAirline">
+            </CriteriaLayout>
         );
     }
 }
