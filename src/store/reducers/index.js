@@ -1,10 +1,12 @@
 import {
     combineReducers
 } from 'redux'
-import headerData from './header_reducer'
+import headerData from './HeaderReducer'
+import Criteria from './CriteriaReducer'
 
 const rootReducer = combineReducers({
-    headerData
+    headerData,
+    Criteria
 })
 
 export default rootReducer;
