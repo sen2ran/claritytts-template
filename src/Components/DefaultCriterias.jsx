@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
-import CriteriaLoader from './CriteriaLoader'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import CriteriaLoader from "./CriteriaLoader";
 
-class DefaultCriterias extends Component {
-    render() {
-        return (
-            <div className="card">
-                <div className="card-header">
-                    <h2>DefaultCriterias</h2>
-                </div>
-                <div className="card-body">
-                    <CriteriaLoader CriteriasList={this.props.defaultCriteriasList} />
-                </div>
-            </div>
-        );
-    }
+const DefaultCriterias = (props) => {
+  const { defaultCriteriasList } = props.Criteria;
+  return (
+    <div className="card">
+      <div className="card-header">
+        <h2>DefaultCriterias</h2>
+      </div>
+      <div className="card-body">
+        {defaultCriteriasList ? (
+          <CriteriaLoader CriteriasList={defaultCriteriasList} />
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
+function mapStateToProps(state) {
+  return {
+    Criteria: state.Criteria
+  };
 }
 
-export default DefaultCriterias;
+export default connect(
+  mapStateToProps,
+  null
+)(DefaultCriterias);
