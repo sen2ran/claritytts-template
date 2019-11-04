@@ -1,34 +1,44 @@
-import React, { Component } from 'react';
-import AuthLayout from '../Hoc/AuthLayout';
+import React, { Component } from "react";
+import BaseLayout from "../Hoc/BaseLayout";
 
-import DefaultCriterias from '../Components/DefaultCriterias'
-import { getCriterias } from "../services/Apicalls";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { loadCriteriaFn } from "../store/actions/CriteriaActions";
+import DefaultCriterias from "../Components/DefaultCriterias";
+// import { getCriterias } from "../services/Apicalls";
 
 class All extends Component {
+  state = {
+    defaultCriteriasList: [],
+    optionalCriteriasList: []
+  };
 
-    state = {
-        defaultCriteriasList: [],
-        optionalCriteriasList: []
-    }
+  componentDidMount() {
+    this.props.loadCriteriaFn("all_criterias.json");
+  }
 
-    async componentDidMount() {
-        const allCriterias = await getCriterias("all_criterias.json")
-        this.setState({
-            defaultCriteriasList: allCriterias.default_criterias,
-            optionalCriteriasList: allCriterias.optional_criterias
-        })
-    }
-
-    render() {
-        const { defaultCriteriasList } = this.state
-        return (
-            <AuthLayout>
-                <h1>All</h1>
-                <hr/>
-                <DefaultCriterias defaultCriteriasList={defaultCriteriasList} />
-            </AuthLayout>
-        );
-    }
+  render() {
+    return (
+      <BaseLayout>
+        <h1>All</h1>
+        <hr />
+        <DefaultCriterias/>
+      </BaseLayout>
+    );
+  }
 }
 
-export default All;
+function mapStateToProps(state) {
+  return {
+    Criteria: state.Criteria
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loadCriteriaFn }, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(All);
