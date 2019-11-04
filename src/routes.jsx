@@ -8,6 +8,8 @@ import Vue from './Pages/Vue.jsx'
 import Svelte from './Pages/Svelte'
 import Feature from './Pages/Feature';
 import All from './Pages/All';
+import Playground from './Pages/PlayGround';
+
 
 
 const Routes = (props) => {
@@ -24,7 +26,10 @@ const Routes = (props) => {
 
         <Route {...props} path="/all" exact component={All} />
         <Route {...props} path="/feature" exact component={Feature} />
+        <Route {...props} path="/pg" exact component={Playground} />
 
+
+        
         <Route {...props} path="/react" exact component={ReactJs} />
         <Route {...props} path="/angular" exact component={Angular} />
         <Route {...props} path="/vue" exact component={Vue} />

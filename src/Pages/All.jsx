@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AuthLayout from '../Hoc/AuthLayout';
 
 import DefaultCriterias from '../Components/DefaultCriterias'
-
 import { getCriterias } from "../services/Apicalls";
 
 class All extends Component {

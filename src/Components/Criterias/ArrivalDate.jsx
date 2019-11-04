@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import CriteriaLayout from '../../Hoc/CriteriaLayout'
 
 class ArrivalDate extends Component {
     render() {
         return (
-            <div className="col-6">
-                <h4>ArrivalDate</h4>
-            </div>
+            <CriteriaLayout heading="ArrivalDate">
+            </CriteriaLayout>
         );
     }
 }

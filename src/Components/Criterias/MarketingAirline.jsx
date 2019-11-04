@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CriteriaLayout from '../../Hoc/CriteriaLayout'
+
 
 class MarketingAirline extends Component {
     render() {

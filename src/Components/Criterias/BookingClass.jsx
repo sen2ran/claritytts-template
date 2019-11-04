@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CriteriaLayout from '../../Hoc/CriteriaLayout'
 
 class BookingClass extends Component {
     render() {
