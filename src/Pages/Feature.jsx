@@ -1,37 +1,31 @@
-import React, { Component } from 'react';
-import AuthLayout from '../Hoc/AuthLayout';
+import React, { Component } from "react";
+import BaseLayout from "../Hoc/BaseLayout";
 
-import DefaultCriterias from '../Components/DefaultCriterias'
-import OptionalCriterias from '../Components/OptionalCriterias'
-import { getCriterias } from "../services/Apicalls";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { loadCriteriaFn } from "../store/actions/CriteriaActions";
+
+import PageContent from "../Components/PageContent";
 
 class Feature extends Component {
+  async componentDidMount() {
+    this.props.loadCriteriaFn("supplier_airline_blocking_rule_criterias.json");
+  }
 
-    state = {
-        defaultCriteriasList: [],
-        optionalCriteriasList: []
-    }
-
-    async componentDidMount() {
-        const allCriterias = await getCriterias("supplier_airline_blocking_rule_criterias.json")
-        this.setState({
-            defaultCriteriasList: allCriterias.default_criterias,
-            optionalCriteriasList: allCriterias.optional_criterias
-        })
-    }
-
-    render() {
-        const { defaultCriteriasList ,optionalCriteriasList } = this.state
-        console.log(defaultCriteriasList);
-        return (
-            <AuthLayout>
-                <h1>Feature</h1>
-                <hr />
-                <DefaultCriterias defaultCriteriasList={defaultCriteriasList} />
-                <OptionalCriterias optionalCriteriasList={optionalCriteriasList} />
-            </AuthLayout>
-        );
-    }
+  render() {
+    return (
+      <BaseLayout>
+        <PageContent heading="Feature" />
+      </BaseLayout>
+    );
+  }
 }
 
-export default Feature;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loadCriteriaFn }, dispatch);
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Feature);

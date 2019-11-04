@@ -1,19 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import OptionalCriteriasCheckBox from "./OptionalCriteriasCheckBox";
 import CriteriaLoader from "./CriteriaLoader";
 
-class OptionalCriterias extends Component {
-  render() {
-    return (
-      <div className="card">
-        <div className="card-header">
-          <h2>OptionalCriterias</h2>
-        </div>
-        <div className="card-body">
-          <CriteriaLoader CriteriasList={this.props.optionalCriteriasList} />
-        </div>
+const OptionalCriterias = (props) => {
+  const { selectedOptionalCriteriasList } = props.Criteria;
+  const { length } = selectedOptionalCriteriasList;
+
+  return (
+    <div className="card">
+      <div className="card-header">
+        <h2>OptionalCriterias</h2>
       </div>
-    );
-  }
+      <div className="card-body">
+        <OptionalCriteriasCheckBox />
+        {length > 0 ? (
+          <CriteriaLoader CriteriasList={selectedOptionalCriteriasList} />
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
+function mapStateToProps(state) {
+  return {
+    Criteria: state.Criteria
+  };
 }
 
-export default OptionalCriterias;
+export default connect(
+  mapStateToProps,
+  null
+)(OptionalCriterias);

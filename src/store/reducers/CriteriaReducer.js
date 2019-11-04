@@ -7,8 +7,6 @@ const iniState = {
 export default function (state = iniState, action) {
   switch (action.type) {
     case "SET_CRITERIA":
-      console.log(action.payload);
-
       return {
         ...state,
         defaultCriteriasList: action.payload.defaultCriteriasList,
@@ -18,11 +16,13 @@ export default function (state = iniState, action) {
       let {
         selectedOptionalCriteriasList
       } = state
+
       if (!selectedOptionalCriteriasList.includes(action.payload)) {
         selectedOptionalCriteriasList.push(action.payload)
       } else {
-        selectedOptionalCriteriasList.splice(selectedOptionalCriteriasList.indexOf(action.payload))
+        selectedOptionalCriteriasList.splice(selectedOptionalCriteriasList.indexOf(action.payload),1)
       }
+
       return {
         ...state,
         selectedOptionalCriteriasList:selectedOptionalCriteriasList

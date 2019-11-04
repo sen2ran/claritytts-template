@@ -7,15 +7,15 @@ import { loadCriteriaFn } from "../store/actions/CriteriaActions";
 
 import PageContent from "../Components/PageContent";
 
-class All extends Component {
-  componentDidMount() {
-    this.props.loadCriteriaFn("all_criterias.json");
+class FeatureTwo extends Component {
+  async componentDidMount() {
+    this.props.loadCriteriaFn("supplier_pos_rules_criterias.json");
   }
 
   render() {
     return (
       <BaseLayout>
-        <PageContent heading="All"></PageContent>
+        <PageContent heading="Feature Two" />
       </BaseLayout>
     );
   }
@@ -28,4 +28,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   null,
   mapDispatchToProps
-)(All);
+)(FeatureTwo);
