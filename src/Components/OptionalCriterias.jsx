@@ -8,7 +8,7 @@ const OptionalCriterias = (props) => {
   const { length } = selectedOptionalCriteriasList;
 
   return (
-    <div className="card">
+    <div className="card mt-2">
       <div className="card-header">
         <h2>OptionalCriterias</h2>
       </div>
