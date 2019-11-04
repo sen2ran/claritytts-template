@@ -13,3 +13,10 @@ export async function loadCriteriaFn(URL) {
         payload: payload
     }
 }
+
+export async function CheckBoxCheckFn(payload) {
+    return {
+        type: 'SET_CHECKBOX_VALUE',
+        payload: payload
+    }
+}
