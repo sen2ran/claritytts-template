@@ -1,6 +1,8 @@
 import Axios from "axios";
 const URL = "https://m-city-7c464.firebaseio.com/metatest/";
 const BASE_URL = "https://m-city-7c464.firebaseio.com/";
+const CRITERIA_BASE_URL =
+  "https://dummy.com/api/getCriteriasModelJson";
 
 export async function getDetails(payload) {
   const request = await Axios.get(`${URL}/${payload}`);
