@@ -7,10 +7,10 @@ const BaseLayout = (props) => {
   return (
     <div>
       <Header />
-      <main role="main" className="container">
+      <main role="main"  style={{margin: "10px"}}>
         {props.children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

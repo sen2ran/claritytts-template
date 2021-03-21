@@ -31,6 +31,7 @@ import TicketingDate from "./Criterias/TicketingDate";
 import TourCode from "./Criterias/TourCode";
 import TripType from "./Criterias/TripType";
 import ValidatingAirline from "./Criterias/ValidatingAirline";
+import FareRange from './Criterias/FareRange'
 
 const CriteriaLoader = (props) => {
   const ComponentArrray = [
@@ -49,6 +50,7 @@ const CriteriaLoader = (props) => {
     { id: "departureDayScheduler", Component: DepartureDayScheduler },
     { id: "destination", Component: Destination },
     { id: "fareBasisCode", Component: FareBasisCode },
+    { id: "fareRange", Component: FareRange },
     { id: "flightNumber", Component: FlightNumber },
     { id: "marketingAirline", Component: MarketingAirline },
     { id: "maxStay", Component: MaxStay },

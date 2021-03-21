@@ -12,13 +12,18 @@ app.get('/*', async function (req, response) {
     const filePath = path.resolve(__dirname, 'build', 'index.html')
     fs.readFile(filePath, 'utf8', function (err, data) {
         if (err) {
-            return console.log(err);
+            return 
         }
-        data = data.replace(/\$OG_NAME/g, res.data.name);
-        data = data.replace(/\$OG_TITLE/g, res.data.metaTag.image);
-        data = data.replace(/\$OG_DESCRIPTION/g, lang === 'en' ? res.data.metaTag.shortDescription : res.data.metaTag.shortDescriptionRu);
+        // data = data.replace(/\$OG_NAME/g, res.data.name);
+        // data = data.replace(/\$OG_TITLE/g, res.data.metaTag.image);
+        // data = data.replace(/\$OG_DESCRIPTION/g, lang === 'en' ? res.data.metaTag.shortDescription : res.data.metaTag.shortDescriptionRu);
+        // result = data.replace(/\$OG_IMAGE/g, res.data.metaTag.image);
 
-        result = data.replace(/\$OG_IMAGE/g, res.data.metaTag.image);
+        data = data.replace(/\$OG_NAME/g, 'OTP-React-Frontend');
+        data = data.replace(/\$OG_TITLE/g, 'OTP-React-Frontend');
+        data = data.replace(/\$OG_DESCRIPTION/g, 'OTP-React-Frontend');
+        result = data.replace(/\$OG_IMAGE/g, 'OTP-React-Frontend');
+
         response.send(result);
     });
 });
